@@ -1,7 +1,8 @@
-#include <iostream>
+#include <iostream> // Including the input-output stream library for basic I/O operations
 
-using namespace std;
+using namespace std; // Using the standard namespace to simplify access to standard library components
 
+// Node class represents a single node in the linked list
 class Node {
 public:
     int data;           // Data of the node
@@ -9,11 +10,12 @@ public:
 
     // Constructor to initialize the node with data and nullptr as next pointer
     Node(int data) {
-        this->data = data;
-        this->next = nullptr;
+        this->data = data; // Initialize data member with provided data
+        this->next = nullptr; // Initialize next pointer to nullptr
     }
 };
 
+// LinkedList class represents a linked list
 class LinkedList {
 private:
     Node* head;         // Pointer to the first node in the list
@@ -21,7 +23,7 @@ private:
 public:
     // Constructor to initialize the linked list with nullptr as head pointer
     LinkedList() {
-        head = nullptr;
+        head = nullptr; // Initialize head pointer to nullptr, indicating an empty list
     }
 
     // Function to insert a node at the end of the list
