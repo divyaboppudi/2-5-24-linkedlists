@@ -1,4 +1,4 @@
-#include <iostream>
+#include <iostream> // Include necessary library for input-output operations
 
 // Define a struct for the node of the linked list
 struct Node {
@@ -40,6 +40,3 @@ int main() {
 
     return 0;
 }
-
-//changed1
-//guj
