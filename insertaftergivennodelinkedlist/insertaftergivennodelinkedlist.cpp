@@ -1,5 +1,6 @@
-#include <iostream>
-using namespace std;
+#include <iostream> // Include necessary library for input-output operations
+
+using namespace std; // Use the standard namespace for simpler code
 
 // A linked list node
 class Node {
@@ -13,7 +14,7 @@ public:
 void insertAfter(Node* prev_node, int new_data) {
     // Check if the given prev_node is NULL
     if (prev_node == NULL) {
-        cout << "The given previous node cannot be NULL" << endl;
+        cout << "The given previous node cannot be NULL" << endl; // Print an error message
         return;
     }
     // Allocate memory for the new node
@@ -73,6 +74,3 @@ int main() {
 
     return 0;
 }
-
-
-//changed1.
