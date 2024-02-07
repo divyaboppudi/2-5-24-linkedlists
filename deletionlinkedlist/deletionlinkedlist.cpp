@@ -28,93 +28,93 @@ public:
 
     // Function to insert a node at the end of the list
     void insertAtEnd(int data) {
-        Node* newNode = new Node(data);     // Create a new node with the given data
-        if (head == nullptr) {              // If list is empty, make the new node the head
+        Node* newNode = new Node(data); // Create a new node with the given data
+        if (head == nullptr) { // If list is empty, make the new node the head
             head = newNode;
             return;
         }
-        Node* temp = head;                  // Traverse the list to find the last node
+        Node* temp = head; // Traverse the list to find the last node
         while (temp->next != nullptr) {
             temp = temp->next;
         }
-        temp->next = newNode;               // Link the last node to the new node
+        temp->next = newNode; // Link the last node to the new node
     }
 
     // Function to delete the first node from the list
     void deleteAtBeginning() {
-        if (head == nullptr) {              // If list is empty, print a message and return
+        if (head == nullptr) { // If list is empty, print a message and return
             cout << "Linked list is empty. Nothing to delete." << endl;
             return;
         }
-        Node* temp = head;                  // Store the head node in a temporary pointer
-        head = head->next;                  // Move the head pointer to the next node
-        delete temp;                        // Delete the old head node
+        Node* temp = head; // Store the head node in a temporary pointer
+        head = head->next; // Move the head pointer to the next node
+        delete temp; // Delete the old head node
     }
 
     // Function to delete the last node from the list
     void deleteAtEnd() {
-        if (head == nullptr) {              // If list is empty, print a message and return
+        if (head == nullptr) { // If list is empty, print a message and return
             cout << "Linked list is empty. Nothing to delete." << endl;
             return;
         }
-        if (head->next == nullptr) {        // If list has only one node, delete it and update head
+        if (head->next == nullptr) { // If list has only one node, delete it and update head
             delete head;
             head = nullptr;
             return;
         }
-        Node* temp = head;                  // Traverse the list to find the second last node
+        Node* temp = head; // Traverse the list to find the second last node
         while (temp->next->next != nullptr) {
             temp = temp->next;
         }
-        delete temp->next;                  // Delete the last node
-        temp->next = nullptr;               // Update the next pointer of the second last node
+        delete temp->next; // Delete the last node
+        temp->next = nullptr; // Update the next pointer of the second last node
     }
 
     // Function to delete a node with a specific key from the list
     void deleteInMiddle(int key) {
-        if (head == nullptr) {              // If list is empty, print a message and return
+        if (head == nullptr) { // If list is empty, print a message and return
             cout << "Linked list is empty. Nothing to delete." << endl;
             return;
         }
-        if (head->data == key) {            // If the key matches the data of the head node
-            Node* temp = head;              // Store the head node in a temporary pointer
-            head = head->next;              // Move the head pointer to the next node
-            delete temp;                    // Delete the old head node
+        if (head->data == key) { // If the key matches the data of the head node
+            Node* temp = head; // Store the head node in a temporary pointer
+            head = head->next; // Move the head pointer to the next node
+            delete temp; // Delete the old head node
             return;
         }
-        Node* temp = head;                  // Traverse the list to find the node with the key
-        Node* prev = nullptr;               // Pointer to keep track of the previous node
+        Node* temp = head; // Traverse the list to find the node with the key
+        Node* prev = nullptr; // Pointer to keep track of the previous node
         while (temp != nullptr && temp->data != key) {
             prev = temp;
             temp = temp->next;
         }
-        if (temp == nullptr) {              // If key not found, print a message and return
+        if (temp == nullptr) { // If key not found, print a message and return
             cout << "Key not found in the list." << endl;
             return;
         }
-        prev->next = temp->next;            // Update the next pointer of the previous node
-        delete temp;                        // Delete the node with the key
+        prev->next = temp->next; // Update the next pointer of the previous node
+        delete temp; // Delete the node with the key
     }
 
     // Function to display the elements of the list
     void display() {
-        Node* temp = head;                  // Start from the head node
-        while (temp != nullptr) {           // Traverse the list until the end
-            cout << temp->data << " ";      // Print the data of the current node
-            temp = temp->next;              // Move to the next node
+        Node* temp = head; // Start from the head node
+        while (temp != nullptr) { // Traverse the list until the end
+            cout << temp->data << " "; // Print the data of the current node
+            temp = temp->next; // Move to the next node
         }
         cout << endl;
     }
 
     // Destructor to deallocate memory used by the linked list
     ~LinkedList() {
-        Node* temp = head;                  // Start from the head node
-        while (temp != nullptr) {           // Traverse the list until the end
-            Node* nextNode = temp->next;    // Store the next node in a temporary pointer
-            delete temp;                    // Delete the current node
-            temp = nextNode;                // Move to the next node
+        Node* temp = head; // Start from the head node
+        while (temp != nullptr) { // Traverse the list until the end
+            Node* nextNode = temp->next; // Store the next node in a temporary pointer
+            delete temp; // Delete the current node
+            temp = nextNode; // Move to the next node
         }
-        head = nullptr;                     // Set head to nullptr after all nodes are deleted
+        head = nullptr; // Set head to nullptr after all nodes are deleted
     }
 };
 
